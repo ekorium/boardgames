@@ -1,0 +1,17 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  height: 100dvw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5%;
+}

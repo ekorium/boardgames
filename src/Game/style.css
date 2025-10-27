@@ -1,0 +1,24 @@
+.game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2%;
+}
+
+.player1 {
+  background-color: rgb(206, 0, 0);
+}
+
+.player2 {
+  background-color: rgb(17, 158, 106);
+}
+
+.player4 {
+  background-color: rgb(255, 166, 0);
+}
+
+.player3 {
+  background-color: rgb(128, 0, 100);
+}

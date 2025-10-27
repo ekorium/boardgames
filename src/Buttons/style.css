@@ -1,0 +1,10 @@
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    & > * {
+        font-size: 2rem;
+        padding: 1%;
+        flex: 1;
+    }
+}
