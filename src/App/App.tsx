@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Game from "../Game/Game";
-import * as connectX from "../Game/games/connect4";
+import * as connect4 from "../Game/games/connect4";
 import * as othello from "../Game/games/othello";
 import "./style.css";
 import type { Logic } from "../Game/types";
@@ -42,7 +42,7 @@ export default function App() {
           value={rows}
           onChange={(event) => setRows(parseInt(event.target.value))}
         />
-        <button className="menu-button" onClick={() => setGame(connectX)}>
+        <button className="menu-button" onClick={() => setGame(connect4)}>
           Connect4
         </button>
         <button className="menu-button" onClick={() => setGame(othello)}>

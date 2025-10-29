@@ -1,7 +1,7 @@
 import type { Logic, Settings, State, Move } from "./types";
 
 export function initialState(logic: Logic, settings: Settings): State {
-  const state = {
+  const state: State = {
     turn: 1,
     board: Array(settings.cols)
       .fill(0)
@@ -10,8 +10,9 @@ export function initialState(logic: Logic, settings: Settings): State {
     move: undefined,
     winner: 0,
   };
-  logic.setupBoard(settings, state.board)
-  return state
+  logic.setupBoard(settings, state.board);
+  state.winner = logic.checkWinner(settings, state);
+  return state;
 }
 
 export function changeState(
@@ -46,13 +47,13 @@ function copyState(state: State): State {
 }
 
 export function checkPassAll(state: State): boolean {
-  const turn = state.turn
+  const turn = state.turn;
 
   while (!state.move && state.previous) {
     state = state.previous;
 
     if (turn === state.turn) {
-      return true
+      return true;
     }
   }
 
@@ -60,5 +61,5 @@ export function checkPassAll(state: State): boolean {
 }
 
 export function checkBoardFull(state: State): boolean {
-  return !state.board.flat().some((value) => !value)
+  return state.board.flat().every((value) => value);
 }
